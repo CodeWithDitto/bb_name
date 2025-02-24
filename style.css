@@ -22,6 +22,7 @@ body {
     box-sizing: border-box;  /* Prevent padding from causing overflow */
     margin-left: auto;  /* Center the container */
     margin-right: auto;  /* Center the container */
+    text-align: center;  /* Center align everything inside the container */
 }
 
 /* Make headings a bit smaller on mobile */
@@ -42,9 +43,11 @@ input, button {
     border-radius: 8px;
     border: 2px solid #ddd;
     transition: all 0.3s ease-in-out;
-    width: 90%;  /* Make input and button full width on small screens */
+    width: 90%;  /* Ensure inputs and buttons don't overflow */
+    box-sizing: border-box;  /* Prevent box from overflowing */
 }
 
+/* Ensure the input field stays inside the white box */
 input {
     background-color: #f5f5f5;
 }
@@ -125,6 +128,7 @@ button:active {
 
     .container {
         padding: 20px;  /* Reduce container padding on small screens */
+        width: 100%;  /* Ensure it fills the screen width */
     }
 
     h1 {
