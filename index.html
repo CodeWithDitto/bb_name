@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guess the Baby Name</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Guess the Baby Name!</h1>
+        <input type="text" id="guessInput" placeholder="Enter your guess...">
+        <button id="submitBtn">Submit</button>
+    </div>
+
+    <!-- Full-Screen Outcome Overlay -->
+    <div class="outcome-overlay" id="outcomeOverlay">
+        <div class="outcome-message">
+            <h2 id="outcomeMessage">You got it correct!</h2>
+            <p id="additionalMessage" class="additional-message"></p> <!-- Additional message for the prize -->
+            <button id="closeBtn">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
