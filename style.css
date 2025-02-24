@@ -2,12 +2,14 @@
 body {
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    padding: 50px;
+    padding: 20px;  /* Adjusted padding for mobile */
     background: linear-gradient(45deg, #00f2ff 25%, #ff0099 25%, #ff0099 50%, #00f2ff 50%, #00f2ff 75%, #ff0099 75%, #ff0099 100%);
     background-size: 56.57px 56.57px;
     transition: background-color 2s ease;
+    margin: 0;  /* Remove default margin */
 }
 
+/* Container now has more flexible and mobile-friendly styling */
 .container {
     display: inline-block;
     background-color: rgba(255, 255, 255, 0.9);
@@ -16,28 +18,22 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     margin-top: 20px;
     width: 100%;
-    max-width: 600px;
+    max-width: 100%;  /* Ensure the container can use full width */
+    box-sizing: border-box;  /* Prevent padding from causing overflow */
+    margin-left: auto;  /* Center the container */
+    margin-right: auto;  /* Center the container */
 }
 
+/* Make headings a bit smaller on mobile */
 h1 {
     font-family: "Roboto Mono", monospace;
-    font-size: 4em;
+    font-size: 2.5em;  /* Adjusted font size for mobile */
     margin-bottom: 20px;
     animation: rainbow 3s infinite;
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -1px -1px 3px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes rainbow {
-    0% { color: red; }
-    14% { color: orange; }
-    28% { color: yellow; }
-    42% { color: green; }
-    57% { color: blue; }
-    71% { color: indigo; }
-    85% { color: violet; }
-    100% { color: red; }
-}
-
+/* Make input and button elements responsive */
 input, button {
     font-family: "Roboto Mono", monospace;
     padding: 12px;
@@ -46,10 +42,10 @@ input, button {
     border-radius: 8px;
     border: 2px solid #ddd;
     transition: all 0.3s ease-in-out;
+    width: 90%;  /* Make input and button full width on small screens */
 }
 
 input {
-    width: 80%;
     background-color: #f5f5f5;
 }
 
@@ -92,37 +88,14 @@ button:active {
     animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Outcome message should have a more fluid width for smaller screens */
 .outcome-message {
     background-color: white;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-h2 {
-    font-family: "Roboto Mono", monospace;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-button#closeBtn {
-    background-color: #6200ea;
-    color: white;
-    padding: 12px;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-button#closeBtn:hover {
-    background-color: #3700b3;
-    transform: translateY(-2px);
-}
-
-button#closeBtn:active {
-    transform: translateY(1px);
+    width: 90%;  /* Adjust width for mobile */
+    max-width: 500px;  /* Limit width on larger screens */
 }
 
 /* New style for the additional message */
@@ -141,5 +114,31 @@ button#closeBtn:active {
     }
     100% {
         opacity: 1;
+    }
+}
+
+/* Add media query for mobile responsiveness */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10px;  /* Reduce padding on mobile */
+    }
+
+    .container {
+        padding: 20px;  /* Reduce container padding on small screens */
+    }
+
+    h1 {
+        font-size: 2.5em;  /* Reduce font size of h1 for mobile */
+    }
+
+    .outcome-message {
+        padding: 20px;  /* Less padding in the outcome box */
+        width: 90%;  /* Full-width outcome message */
+        max-width: none;  /* Allow outcome box to take up all the space on smaller screens */
+    }
+
+    input, button {
+        width: 100%;  /* Inputs and buttons take full width on mobile */
+        font-size: 1em;  /* Adjust font size for readability */
     }
 }
