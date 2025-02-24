@@ -1,4 +1,4 @@
-const secretWord = "advice";  // Secret word
+const secretWord = "ellie";  // Updated secret word
 const submitButton = document.getElementById("submitBtn");
 const guessInput = document.getElementById("guessInput");
 const outcomeOverlay = document.getElementById("outcomeOverlay");
@@ -14,7 +14,7 @@ guessInput.addEventListener("keypress", function(e) {
 });
 
 function checkGuess() {
-    const userGuess = guessInput.value.toLowerCase().trim();
+    const userGuess = guessInput.value.toLowerCase().trim(); // Lowercase the user input to make the guess case-insensitive
 
     if (userGuess === secretWord) {
         // If correct, show the outcome screen with success message and change button text to "Close"
