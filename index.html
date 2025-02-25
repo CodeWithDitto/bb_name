@@ -9,17 +9,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Instruction Modal -->
+    <div id="instructionModal" class="modal">
+        <div class="modal-content">
+            <h1>Welcome to the Game!</h1>
+            <h2>Instructions</h2>
+            <p>Guess the baby name. The name is case-insensitive.</p>
+            <div id="hintMessage">
+                Hint: Look around the room, it could be one of the names of the name tags people are wearing.
+            </div>
+            <button id="startButton">Start</button>
+        </div>
+    </div>
+
     <div class="container">
         <h1>Guess the Baby Name!</h1>
-        <input type="text" id="guessInput" placeholder="Enter your guess...">
-        <button id="submitBtn">Submit</button>
+        <input type="text" id="guessInput" placeholder="Enter your guess..." disabled>
+        <button id="submitBtn" disabled>Submit</button>
     </div>
 
     <!-- Full-Screen Outcome Overlay -->
     <div class="outcome-overlay" id="outcomeOverlay">
         <div class="outcome-message">
             <h2 id="outcomeMessage">You got it correct!</h2>
-            <p id="additionalMessage" class="additional-message"></p> <!-- Additional message for the prize -->
+            <p id="additionalMessage" class="additional-message"></p>
             <button id="closeBtn">Close</button>
         </div>
     </div>
