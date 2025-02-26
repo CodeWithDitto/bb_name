@@ -1,4 +1,4 @@
-const secretWord = "ellie";  // Updated secret word
+const secretWord = atob("ZWxsaWU=");  // Base64 encoded "ellie"
 const submitButton = document.getElementById("submitBtn");
 const guessInput = document.getElementById("guessInput");
 const outcomeOverlay = document.getElementById("outcomeOverlay");
