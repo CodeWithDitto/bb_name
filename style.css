@@ -38,7 +38,7 @@ body {
     text-align: center;
 }
 
-/* Rainbow Text Animation for "Guess the Baby Name" */
+/* Rainbow Text Animation for "Guess the Baby's Name" */
 @keyframes rainbow {
     0% { color: red; }
     14% { color: orange; }
@@ -132,11 +132,6 @@ button:active {
     font-weight: bold;
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
 /* Responsive Layout */
 @media screen and (max-width: 600px) {
     body {
@@ -198,4 +193,35 @@ input[type="text"]:focus {
 input, button {
     display: inline-block;
     margin: 10px;
+}
+
+/* Align hint buttons left to right */
+#hintButtons {
+    display: flex;
+    justify-content: space-between;  /* Space between the buttons */
+    width: 100%;
+    margin-top: 20px;  /* Space above the hint buttons */
+}
+
+/* Style the hint buttons */
+#hintButtons button {
+    flex: 1;  /* Ensure buttons take equal width */
+    margin: 0 10px;  /* Add spacing between buttons */
+    padding: 12px;
+    font-size: 1em;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#hintButtons button:hover {
+    background-color: #3700b3;
+    transform: translateY(-2px);
+}
+
+#hintButtons button:active {
+    transform: translateY(1px);
 }

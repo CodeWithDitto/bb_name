@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Guess the Baby Name</title>
+    <title>Guess the Baby's Name Game!</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,20 +12,25 @@
     <!-- Instruction Modal -->
     <div id="instructionModal" class="modal">
         <div class="modal-content">
-            <h1>Welcome to the Game!</h1>
-            <h2>Instructions</h2>
-            <p>Guess the baby name. The name is case-insensitive.</p>
-            <div id="hintMessage">
-                Hint: Look around the room, it could be one of the names of the name tags people are wearing.
-            </div>
+            <h1>Guess the Baby's Name!</h1>
+            <h2>Instructions:</h2>
+            <p>Guess the baby's name before the end of the party!</p>
+            <p>No online help is allowed, but feel free to converse amongst each other. Remember, there’s only one grand prize!</p>
             <button id="startButton">Start</button>
         </div>
     </div>
 
     <div class="container">
-        <h1>Guess the Baby Name!</h1>
+        <h1>Guess the Baby's Name Game!</h1>
         <input type="text" id="guessInput" placeholder="Enter your guess..." disabled>
         <button id="submitBtn" disabled>Submit</button>
+
+        <!-- Hint Buttons -->
+        <div id="hintButtons">
+            <button id="hintBtn1">Hint 1</button>
+            <button id="hintBtn2">Hint 2</button>
+            <button id="hintBtn3">Hint 3</button>
+        </div>
     </div>
 
     <!-- Full-Screen Outcome Overlay -->
@@ -34,6 +39,14 @@
             <h2 id="outcomeMessage">You got it correct!</h2>
             <p id="additionalMessage" class="additional-message"></p>
             <button id="closeBtn">Close</button>
+        </div>
+    </div>
+
+    <!-- Hint Popup -->
+    <div id="hintPopup" class="modal">
+        <div class="modal-content">
+            <p id="hintText"></p>
+            <button id="closeHintBtn">Close</button>
         </div>
     </div>
 

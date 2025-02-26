@@ -7,14 +7,13 @@ const outcomeMessage = document.getElementById("outcomeMessage");
 const additionalMessage = document.getElementById("additionalMessage");
 const instructionModal = document.getElementById("instructionModal");
 const startButton = document.getElementById("startButton");
-const container = document.querySelector('.container');  // The container holding the guess input and submit button
+const container = document.querySelector('.container');
+const hintButton1 = document.getElementById("hintBtn1");
+const hintButton2 = document.getElementById("hintBtn2");
+const hintButton3 = document.getElementById("hintBtn3");
 
-submitButton.addEventListener("click", checkGuess);
-guessInput.addEventListener("keypress", function(e) {
-    if (e.key === 'Enter') {
-        checkGuess();
-    }
-});
+const hintPopup = document.getElementById("hintPopup");
+const closeHintButton = document.getElementById("closeHintBtn");  // Close button for hint popup
 
 // Show the instruction modal when the page loads
 window.onload = function() {
@@ -54,4 +53,35 @@ function checkGuess() {
 closeButton.addEventListener("click", function() {
     outcomeOverlay.style.display = "none";  // Hide the overlay
     guessInput.value = "";  // Optionally clear the input field
+});
+
+// When the user clicks on the submit button, check the guess
+submitButton.addEventListener("click", checkGuess);
+
+// Allow the user to press "Enter" to submit a guess as well
+guessInput.addEventListener("keypress", function(e) {
+    if (e.key === 'Enter') {
+        checkGuess();
+    }
+});
+
+// Show the hint popup when any hint button is clicked
+hintButton1.addEventListener("click", function() {
+    document.getElementById("hintText").textContent = "A major character in a post-apocalyptic scenario, holding a game-changing secret.";
+    hintPopup.style.display = "flex";  // Show the hint popup
+});
+
+hintButton2.addEventListener("click", function() {
+    document.getElementById("hintText").innerHTML = "An eager explorer who once journeyed with a dream of adventure, her story is etched in the sky with a connection to a house and balloons.";
+    hintPopup.style.display = "flex";  // Show the hint popup
+});
+
+hintButton3.addEventListener("click", function() {
+    document.getElementById("hintText").innerHTML = "A bubbly actress known for playing quirky, optimistic characters in a hit Netflix series and a popular office mockumentary.";
+    hintPopup.style.display = "flex";  // Show the hint popup
+});
+
+// Close the hint popup when the "Close" button is clicked
+closeHintButton.addEventListener("click", function() {
+    hintPopup.style.display = "none";  // Hide the hint popup
 });
