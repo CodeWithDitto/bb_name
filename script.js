@@ -85,3 +85,15 @@ hintButton3.addEventListener("click", function() {
 closeHintButton.addEventListener("click", function() {
     hintPopup.style.display = "none";  // Hide the hint popup
 });
+
+// Add an event listener to show hint buttons once the user types "ineedhelpmommy"
+guessInput.addEventListener("input", function() {
+    const userInput = guessInput.value.trim();
+
+    // Check if the input is exactly "ineedhelpmommy"
+    if (userInput === "ineedhelpmommy") {
+        document.getElementById("hintButtons").style.display = "flex";  // Show hint buttons
+    } else {
+        document.getElementById("hintButtons").style.display = "none";  // Hide hint buttons
+    }
+});

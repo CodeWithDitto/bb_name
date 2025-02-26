@@ -197,10 +197,10 @@ input, button {
 
 /* Align hint buttons left to right */
 #hintButtons {
-    display: flex;
-    justify-content: space-between;  /* Space between the buttons */
+    display: none;  /* Initially hide the hint buttons */
+    justify-content: space-between;
     width: 100%;
-    margin-top: 20px;  /* Space above the hint buttons */
+    margin-top: 20px;
 }
 
 /* Style the hint buttons */
