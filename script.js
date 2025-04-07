@@ -77,7 +77,7 @@ hintButton2.addEventListener("click", function() {
 });
 
 hintButton3.addEventListener("click", function() {
-    document.getElementById("hintText").innerHTML = "A bubbly actress known for playing quirky, optimistic characters in a hit Netflix series and a popular office mockumentary.";
+    document.getElementById("hintText").innerHTML = "I make you feel the Burn, then show bright like Lights. Though I am a sleeper, true true true, I’ll make you fall deeper, Love Me Like You Do.";
     hintPopup.style.display = "flex";  // Show the hint popup
 });
 
