@@ -77,7 +77,7 @@ hintButton2.addEventListener("click", function() {
 });
 
 hintButton3.addEventListener("click", function() {
-    document.getElementById("hintText").innerHTML = "A bubbly actress known for playing quirky, optimistic characters in a hit Netflix series and a popular office mockumentary.";
+    document.getElementById("hintText").innerHTML = "So love me like you do, la-la-love me like you do.";
     hintPopup.style.display = "flex";  // Show the hint popup
 });
 
