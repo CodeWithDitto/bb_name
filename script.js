@@ -77,7 +77,11 @@ hintButton2.addEventListener("click", function() {
 });
 
 hintButton3.addEventListener("click", function() {
+<<<<<<< HEAD
     document.getElementById("hintText").innerHTML = "I make you feel the Burn, then show bright like Lights. Though I am a sleeper, true true true, I’ll make you fall deeper, Love Me Like You Do.";
+=======
+    document.getElementById("hintText").innerHTML = "So love me like you do, la-la-love me like you do.";
+>>>>>>> 9a8038095738011fab2654be3e5abf92a41e8e9c
     hintPopup.style.display = "flex";  // Show the hint popup
 });
 
