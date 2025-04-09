@@ -77,7 +77,7 @@ hintButton2.addEventListener("click", function() {
 });
 
 hintButton3.addEventListener("click", function() {
-    document.getElementById("hintText").innerHTML = "She is a paleobotanist and the deuteragonist of a "vigorous" amusement park.";
+    document.getElementById("hintText").innerHTML = "She is a paleobotanist and the deuteragonist of a vigorous amusement park.";
     hintPopup.style.display = "flex";  // Show the hint popup
 });
 
