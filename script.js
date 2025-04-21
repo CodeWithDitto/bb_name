@@ -15,6 +15,15 @@ const hintButton3 = document.getElementById("hintBtn3");
 const hintPopup = document.getElementById("hintPopup");
 const closeHintButton = document.getElementById("closeHintBtn");
 
+// 🎉 Confetti function
+function launchConfetti() {
+    confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 }
+    });
+}
+
 // Flags to track which hints have been unlocked
 let hint1Unlocked = false;
 let hint2Unlocked = false;
@@ -42,6 +51,9 @@ function checkGuess() {
         additionalMessage.textContent = "Please see host for your prize.";
         closeButton.textContent = "Close";
         outcomeOverlay.style.display = "flex";
+
+        // 🎉 Trigger confetti
+        launchConfetti();
     } else {
         outcomeMessage.textContent = "Wrong guess. Try again!";
         additionalMessage.textContent = "";
