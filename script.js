@@ -13,87 +13,98 @@ const hintButton2 = document.getElementById("hintBtn2");
 const hintButton3 = document.getElementById("hintBtn3");
 
 const hintPopup = document.getElementById("hintPopup");
-const closeHintButton = document.getElementById("closeHintBtn");  // Close button for hint popup
+const closeHintButton = document.getElementById("closeHintBtn");
+
+// Flags to track which hints have been unlocked
+let hint1Unlocked = false;
+let hint2Unlocked = false;
+let hint3Unlocked = false;
 
 // Show the instruction modal when the page loads
-window.onload = function() {
-    instructionModal.style.display = "flex";  // Make sure the modal is visible on page load
+window.onload = function () {
+    instructionModal.style.display = "flex";
 };
 
-// Start the game when the user clicks "Start"
-startButton.addEventListener("click", function() {
-    instructionModal.style.display = "none";  // Hide the instruction modal
-    container.style.display = "block";  // Show the guessing area (input and submit button)
-    guessInput.disabled = false;  // Enable the input field
-    submitButton.disabled = false;  // Enable the submit button
+// Start the game
+startButton.addEventListener("click", function () {
+    instructionModal.style.display = "none";
+    container.style.display = "block";
+    guessInput.disabled = false;
+    submitButton.disabled = false;
 });
 
 // Check the user's guess
 function checkGuess() {
-    const userGuess = guessInput.value.toLowerCase().trim(); // Lowercase the user input
+    const userGuess = guessInput.value.toLowerCase().trim();
 
     if (userGuess === secretWord) {
-        // If correct, show the outcome screen with success message
         outcomeMessage.textContent = "You got it correct!";
         additionalMessage.textContent = "Please see host for your prize.";
-        closeButton.textContent = "Close";  // Change button text to "Close"
+        closeButton.textContent = "Close";
         outcomeOverlay.style.display = "flex";
     } else {
-        // If wrong, show the outcome screen with error message
         outcomeMessage.textContent = "Wrong guess. Try again!";
-        additionalMessage.textContent = ""; // Clear the additional message
-        closeButton.textContent = "Try Again";  // Change button text to "Try Again"
+        additionalMessage.textContent = "";
+        closeButton.textContent = "Try Again";
         outcomeOverlay.style.display = "flex";
     }
 
-    guessInput.value = "";  // Clear the input field after submission
+    guessInput.value = "";
 }
 
-// Close the outcome overlay when the "Close" or "Try Again" button is clicked
-closeButton.addEventListener("click", function() {
-    outcomeOverlay.style.display = "none";  // Hide the overlay
-    guessInput.value = "";  // Optionally clear the input field
+// Close outcome overlay
+closeButton.addEventListener("click", function () {
+    outcomeOverlay.style.display = "none";
+    guessInput.value = "";
 });
 
-// When the user clicks on the submit button, check the guess
+// Submit guess on button click
 submitButton.addEventListener("click", checkGuess);
 
-// Allow the user to press "Enter" to submit a guess as well
-guessInput.addEventListener("keypress", function(e) {
+// Submit guess on Enter key
+guessInput.addEventListener("keypress", function (e) {
     if (e.key === 'Enter') {
         checkGuess();
     }
 });
 
-// Show the hint popup when any hint button is clicked
-hintButton1.addEventListener("click", function() {
+// Show the hint popup
+hintButton1.addEventListener("click", function () {
     document.getElementById("hintText").textContent = "A major character in a post-apocalyptic scenario, holding a game-changing secret.";
-    hintPopup.style.display = "flex";  // Show the hint popup
+    hintPopup.style.display = "flex";
 });
 
-hintButton2.addEventListener("click", function() {
+hintButton2.addEventListener("click", function () {
     document.getElementById("hintText").innerHTML = "An eager explorer who once journeyed with a dream of adventure, her story is etched in the sky with a connection to a house and balloons.";
-    hintPopup.style.display = "flex";  // Show the hint popup
+    hintPopup.style.display = "flex";
 });
 
-hintButton3.addEventListener("click", function() {
+hintButton3.addEventListener("click", function () {
     document.getElementById("hintText").innerHTML = "She is a paleobotanist and the deuteragonist of a vigorous amusement park.";
-    hintPopup.style.display = "flex";  // Show the hint popup
+    hintPopup.style.display = "flex";
 });
 
-// Close the hint popup when the "Close" button is clicked
-closeHintButton.addEventListener("click", function() {
-    hintPopup.style.display = "none";  // Hide the hint popup
+// Close the hint popup
+closeHintButton.addEventListener("click", function () {
+    hintPopup.style.display = "none";
 });
 
-// Add an event listener to show hint buttons once the user types "ineedhelpmommy"
-guessInput.addEventListener("input", function() {
+// Unlock hints based on specific secret inputs
+guessInput.addEventListener("input", function () {
     const userInput = guessInput.value.trim();
 
-    // Check if the input is exactly "ineedhelpmommy"
-    if (userInput === "ineedhelpmommy") {
-        document.getElementById("hintButtons").style.display = "flex";  // Show hint buttons
-    } else {
-        document.getElementById("hintButtons").style.display = "none";  // Hide hint buttons
+    if (userInput === "ineedhelpmommy" && !hint1Unlocked) {
+        hint1Unlocked = true;
+        hintButton1.style.display = "inline-block";
+    }
+
+    if (userInput === "youareloved" && !hint2Unlocked) {
+        hint2Unlocked = true;
+        hintButton2.style.display = "inline-block";
+    }
+
+    if (userInput === "whoisyourdaddy" && !hint3Unlocked) {
+        hint3Unlocked = true;
+        hintButton3.style.display = "inline-block";
     }
 });

@@ -54,17 +54,12 @@ h1 {
     font-family: "Roboto Mono", monospace;
     font-size: 3em;
     margin-bottom: 20px;
-    animation: rainbow 3s infinite;  /* Apply the rainbow animation */
+    animation: rainbow 3s infinite;
 }
 
-/* Modal Animation */
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 h2 {
@@ -88,7 +83,7 @@ button {
     border: none;
     border-radius: 8px;
     transition: background-color 0.3s, transform 0.2s;
-    width: 100%; /* Ensure the button spans the width of the input */
+    width: 100%;
 }
 
 button:hover {
@@ -195,18 +190,21 @@ input, button {
     margin: 10px;
 }
 
-/* Align hint buttons left to right */
+/* Hint Buttons Layout */
 #hintButtons {
-    display: none;  /* Initially hide the hint buttons */
-    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
     width: 100%;
     margin-top: 20px;
 }
 
-/* Style the hint buttons */
+/* Style individual hint buttons */
 #hintButtons button {
-    flex: 1;  /* Ensure buttons take equal width */
-    margin: 0 10px;  /* Add spacing between buttons */
+    display: none; /* Default to hidden, shown by JS */
+    flex: 0 1 auto;
+    min-width: 120px;
     padding: 12px;
     font-size: 1em;
     background-color: #6200ea;
