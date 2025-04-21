@@ -74,6 +74,7 @@ h2 {
     margin-top: 20px;
 }
 
+/* GLOBAL BUTTON STYLES */
 button {
     cursor: pointer;
     background-color: #6200ea;
@@ -83,7 +84,9 @@ button {
     border: none;
     border-radius: 8px;
     transition: background-color 0.3s, transform 0.2s;
-    width: 100%;
+    width: auto; /* Changed from 100% */
+    min-width: 120px;
+    margin: 10px;
 }
 
 button:hover {
@@ -95,7 +98,7 @@ button:active {
     transform: translateY(1px);
 }
 
-/* Outcome Overlay Styles */
+/* OUTCOME OVERLAY */
 .outcome-overlay {
     display: none;
     position: fixed;
@@ -152,7 +155,7 @@ button:active {
     }
 }
 
-/* Interaction area (white box) styles */
+/* INTERACTION AREA */
 .container {
     display: none;
     text-align: center;
@@ -164,7 +167,7 @@ button:active {
     max-width: 600px;
 }
 
-/* Material Design Input Field */
+/* INPUT FIELD */
 input[type="text"] {
     font-family: "Roboto Mono", monospace;
     padding: 12px;
@@ -184,7 +187,7 @@ input[type="text"]:focus {
     box-shadow: 0 0 5px rgba(98, 0, 234, 0.5);
 }
 
-/* Center the form */
+/* Center the form inputs/buttons */
 input, button {
     display: inline-block;
     margin: 10px;
@@ -222,4 +225,13 @@ input, button {
 
 #hintButtons button:active {
     transform: translateY(1px);
+}
+
+/* BUTTON WRAPPER FOR CENTERING */
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
 }
